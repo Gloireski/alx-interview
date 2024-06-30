@@ -5,9 +5,12 @@
 
 
 def pascal_triangle(n):
-    if n <= 0:
-        return []
+    """
+        return list of lists
+    """
     pascal = []
+    if n <= 0:
+        return pascal
     lp = []
     for j in range(n):
         nl = lp + [1]
