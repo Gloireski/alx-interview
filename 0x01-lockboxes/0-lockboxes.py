@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-""" """
+""" implement alg"""
 
 
 def join(T, R):
+    """ helper """
     res = []
     for e in R:
         res += T[e]
@@ -10,6 +11,7 @@ def join(T, R):
 
 
 def canUnlockAll(boxes):
+    """ lockboxes algo """
     index = 0
     total = list(set(boxes[0]) | {0})
     added = True
