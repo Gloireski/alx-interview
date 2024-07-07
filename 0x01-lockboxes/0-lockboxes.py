@@ -20,6 +20,6 @@ def canUnlockAll(boxes):
                 total.append(j)
                 index += 1
                 added = True
-    print(total)
+    # print(total)
 
     return len(total) == len(boxes)
