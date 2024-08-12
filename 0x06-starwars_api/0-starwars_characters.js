@@ -1,0 +1,24 @@
+#!/usr/bin/node
+
+const request = require('request');
+
+const getInfo = (apiList) => {
+  apiList.forEach((el) => {
+    request(`${el}`, function (err, res, body) {
+      if (err) {
+        throw err;
+      }
+      const dta = JSON.parse(body).name;
+      console.log(dta);
+    });
+  });
+};
+
+request(`https://swapi-api.alx-tools.com/api/films/${process.argv[2]}`, function (error, response, body) {
+  if (error) {
+    throw error;
+  }
+  const dta = JSON.parse(body).characters;
+  getInfo(dta);
+  // console.log(dta);
+});
