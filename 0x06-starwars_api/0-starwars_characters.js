@@ -2,15 +2,15 @@
 
 const request = require('request');
 
-const getInfo = (apiList) => {
-  apiList.forEach((el) => {
-    request(`${el}`, function (err, res, body) {
-      if (err) {
-        throw err;
-      }
-      const dta = JSON.parse(body).name;
-      console.log(dta);
-    });
+const getInfo = (apis, i = 0) => {
+  if (i === apis.length) return;
+  request(apis[i], function (err, res, body) {
+    if (err) {
+      throw err;
+    }
+    const dta = JSON.parse(body).name;
+    console.log(dta);
+    getInfo(apis, i + 1);
   });
 };
 
