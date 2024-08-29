@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-from typing import List
 """
 define island_perimeter
 """
 
 
-def island_perimeter(grid) -> int:
+def island_perimeter(grid):
     """
+    island_perimeter algortithme
     """
     width = len(grid[0])
     height = len(grid)
